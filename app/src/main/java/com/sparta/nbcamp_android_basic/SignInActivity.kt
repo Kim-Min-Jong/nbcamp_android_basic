@@ -30,8 +30,6 @@ class SignInActivity : AppCompatActivity() {
             }
             startActivity(Intent(this, HomeActivity::class.java).apply {
                 putExtra("ID", id)
-                putExtra("PWD", pwd)
-
             })
             toast("로그인 성공")
         }

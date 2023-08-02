@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">nbcamp_android_basic</string>
+    <string name="log_in">로그인</string>
+    <string name="sign_in">회원가입</string>
+    <string name="password">비밀번호</string>
+    <string name="id">아이디</string>
+    <string name="put_id">아이디를 입력하세요</string>
+    <string name="put_password">비밀번호를 입력하세요</string>
 </resources>

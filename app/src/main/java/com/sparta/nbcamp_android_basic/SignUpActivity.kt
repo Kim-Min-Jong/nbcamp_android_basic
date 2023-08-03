@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.doOnTextChanged
+import com.sparta.nbcamp_android_basic.model.User
 import com.sparta.nbcamp_android_basic.util.toast
 
 class SignUpActivity : AppCompatActivity() {
@@ -33,10 +34,15 @@ class SignUpActivity : AppCompatActivity() {
                 toast("입력되지 않은 정보가 있습니다.")
                 return@setOnClickListener
             }
+            if(list.count{ it.id == id } >= 1) {
+                toast("중복된 아이디가 있습니다.")
+                return@setOnClickListener
+            }
             val intent = Intent(this, SignInActivity::class.java).apply {
                 putExtra("ID", id)
                 putExtra("PWD",pwd)
             }
+            list.add(User(id, pwd))
             setResult(RESULT_OK, intent)
             finish()
         }
@@ -52,5 +58,8 @@ class SignUpActivity : AppCompatActivity() {
         editTextPwd.doOnTextChanged { text, _, _, _ ->
             pwd = text.toString()
         }
+    }
+    companion object {
+        val list = mutableListOf<User>()
     }
 }

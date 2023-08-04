@@ -11,8 +11,6 @@ import androidx.core.widget.doOnTextChanged
 import com.google.android.material.textfield.TextInputLayout
 import com.sparta.nbcamp_android_basic.util.shake
 import com.sparta.nbcamp_android_basic.util.toast
-import com.sparta.nbcamp_android_basic.util.validate
-import com.sparta.nbcamp_android_basic.util.validateConfirm
 import com.sparta.nbcamp_android_basic.util.validateEmpty
 
 class SignInActivity : AppCompatActivity() {

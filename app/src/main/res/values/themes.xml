@@ -8,8 +8,6 @@
     <style name="Theme.Nbcamp_android_basic" parent="Base.Theme.Nbcamp_android_basic" />
 
     <style name="EditTextAppStyle" parent="Widget.Design.TextInputLayout">
-        <item name="colorControlNormal">@color/gray</item>
-        <item name="colorControlActivated">@color/gray</item>
         <item name="errorTextColor">@color/error</item>
         <item name="boxStrokeErrorColor">@color/error</item>
         <item name="errorIconDrawable">@null</item>

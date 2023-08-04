@@ -23,21 +23,28 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:text="@string/name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextName"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayoutName"
         app:layout_constraintStart_toStartOf="parent" />
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutName"
+        style="@style/EditTextAppStyle"
+        android:theme="@style/EditTextAppStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/put_name"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
         app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
+        app:layout_constraintTop_toBottomOf="@+id/imageView" >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/put_name" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <TextView
@@ -46,41 +53,69 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:text="@string/id"
-        app:layout_constraintBottom_toTopOf="@+id/editTextSignId"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayoutId"
         app:layout_constraintStart_toStartOf="parent" />
-    <EditText
-        android:id="@+id/editTextSignId"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutId"
+        style="@style/EditTextAppStyle"
+        android:theme="@style/EditTextAppStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/put_id"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutName"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextSignId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="@string/put_id"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/password"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextSignPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextSignPassword" />
 
-    <EditText
-        android:id="@+id/editTextTextSignPassword"
-        android:layout_width="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayoutPwd"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayoutPwd" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutPwd"
+        style="@style/EditTextAppStyle"
+        android:theme="@style/EditTextAppStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:ems="10"
-        android:hint="@string/put_password"
-        android:inputType="textPassword"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutId">
 
-        app:layout_constraintTop_toBottomOf="@+id/editTextSignId" />
+        <EditText
+            android:id="@+id/editTextTextSignPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:ems="10"
+            android:hint="@string/put_password"
+            android:inputType="textPassword"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
     <Button
@@ -89,9 +124,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="@string/sign_in"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextSignPassword"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPwd"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextSignPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextSignPassword" />
+        app:layout_constraintStart_toStartOf="@+id/textInputLayoutPwd"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPwd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,5 +5,7 @@
     <color name="gray">#FFbdbdbd</color>
     <color name="error">#B62B2B</color>
     <color name="yellow">#FFFFF176</color>
+    <color name="yellow_reverse">#FF176FFF</color>
     <color name="stroke">#FFFF8844</color>
+    <color name="stroke_reverse">#FF844FF8</color>
 </resources>

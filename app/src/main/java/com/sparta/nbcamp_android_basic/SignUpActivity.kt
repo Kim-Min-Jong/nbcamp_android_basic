@@ -8,8 +8,10 @@ import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 import com.google.android.material.textfield.TextInputLayout
 import com.sparta.nbcamp_android_basic.model.User
+import com.sparta.nbcamp_android_basic.util.shake
 import com.sparta.nbcamp_android_basic.util.toast
 import com.sparta.nbcamp_android_basic.util.validate
+import com.sparta.nbcamp_android_basic.util.validateEmpty
 
 
 class SignUpActivity : AppCompatActivity() {
@@ -20,9 +22,9 @@ class SignUpActivity : AppCompatActivity() {
     private val textInputId by lazy { findViewById<TextInputLayout>(R.id.textInputLayoutId)}
     private val textInputPwd by lazy { findViewById<TextInputLayout>(R.id.textInputLayoutPwd)}
     private val textInputName by lazy { findViewById<TextInputLayout>(R.id.textInputLayoutName)}
-    private lateinit var name: String
-    private lateinit var id: String
-    private lateinit var pwd: String
+    private var name: String = ""
+    private var id: String = ""
+    private var pwd: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +35,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun initButton() {
         btnSignIn.setOnClickListener {
-            if(::name.isInitialized.not() || ::id.isInitialized.not() || ::pwd.isInitialized.not()) {
+            if(!checkValidation()) {
                 toast(getString(R.string.empty_info_exist))
                 return@setOnClickListener
             }
@@ -50,7 +52,23 @@ class SignUpActivity : AppCompatActivity() {
             finish()
         }
     }
+    private fun checkValidation(): Boolean {
+        var check = true
+        if (!validateEmpty(textInputId, id, getString(R.string.check_id))) {
+            shake(editTextId, this@SignUpActivity)
+            check = false
+        }
+        if (!validateEmpty(textInputPwd, pwd, getString(R.string.check_pwd))) {
+            shake(editTextPwd, this@SignUpActivity)
+            check = false
+        }
+        if (!validateEmpty(textInputName, name, getString(R.string.check_name))) {
+            shake(editTextName, this@SignUpActivity)
+            check = false
+        }
 
+        return check
+    }
     private fun initEditText() {
         editTextName.doOnTextChanged { text, _, _, _ ->
             name = text.toString()

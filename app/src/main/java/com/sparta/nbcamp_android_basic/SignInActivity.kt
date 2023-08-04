@@ -44,6 +44,7 @@ class SignInActivity : AppCompatActivity() {
     private fun initButton() {
         btnLogIn.setOnClickListener {
             if(!checkValidation()) {
+                toast(getString(R.string.check_id_pwd))
                 return@setOnClickListener
             }
             startActivity(Intent(this, HomeActivity::class.java).apply {

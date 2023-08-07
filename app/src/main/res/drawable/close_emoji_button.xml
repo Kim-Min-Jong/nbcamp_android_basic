@@ -13,7 +13,7 @@
             <item
                 android:width="30dp"
                 android:height="30dp"
-                android:drawable="@drawable/smile"
+                android:drawable="@drawable/button_smile"
                 android:left="30dp"
                 android:top="10dp"
                 />
@@ -34,7 +34,7 @@
             <item
                 android:width="30dp"
                 android:height="30dp"
-                android:drawable="@drawable/sad"
+                android:drawable="@drawable/button_sad"
                 android:left="30dp"
                 android:top="10dp"
                 />

@@ -4,5 +4,5 @@
     android:fromXDelta="0"
     android:toXDelta="5"
     android:duration="500"
-    android:interpolator="@anim/cycle"
+    android:interpolator="@anim/textinputlayout_cycle"
     />

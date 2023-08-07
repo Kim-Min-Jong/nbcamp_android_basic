@@ -6,7 +6,7 @@ import android.view.animation.AnimationUtils
 import android.widget.EditText
 import com.sparta.nbcamp_android_basic.R
 fun shake(editText: EditText, context: Context) {
-    val animation: Animation = AnimationUtils.loadAnimation(context, R.anim.shake)
+    val animation: Animation = AnimationUtils.loadAnimation(context, R.anim.textinputlayout_shake)
     editText.startAnimation(animation)
     editText.requestFocus()
 }

@@ -27,4 +27,4 @@ SignInActivity editText에 바로 바인딩 시켜주기
 
   
   
-![영상](video.mp4)
+![영상](https://github.com/Kim-Min-Jong/nbcamp_android_basic/assets/79445881/8a268bef-d2fc-40e2-a334-9d4806056a12)

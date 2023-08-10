@@ -25,8 +25,8 @@ class SignInActivity : AppCompatActivity() {
     private val activityLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == Activity.RESULT_OK) {
-                val id = it.data?.getStringExtra("ID")
-                val pwd = it.data?.getStringExtra("PWD")
+                val id = it.data?.getStringExtra("ID") ?: ""
+                val pwd = it.data?.getStringExtra("PWD") ?: ""
                 editTextId.setText(id)
                 editTextPwd.setText(pwd)
             }
